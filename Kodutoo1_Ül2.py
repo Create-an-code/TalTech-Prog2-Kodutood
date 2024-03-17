@@ -1,3 +1,4 @@
+https://leetcode.com/problems/convert-the-temperature/description/
 class Solution:
         #defineerisin funktsiooni, mis teisendab Celsiuse väärtuse Kelviniks ning Fahrenheitiks
         def convertTemperature(self, Celsius):
