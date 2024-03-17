@@ -1,3 +1,4 @@
+https://leetcode.com/problems/add-two-integers/description/
 class Solution:
     #defineerisin funktsiooni, mis võtab sisendiks esimese arvu ning teise ning liidab arvud kokku
     def sum(self, num1, num2):
