@@ -1,4 +1,4 @@
-https://leetcode.com/problems/defanging-an-ip-address/description/
+#https://leetcode.com/problems/defanging-an-ip-address/description/
 class Solution:
     #defineerisin funktsiooni defangIPaddr
     def defangIPaddr(self, address):
