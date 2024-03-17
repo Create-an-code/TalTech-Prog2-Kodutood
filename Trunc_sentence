@@ -1,0 +1,8 @@
+https://leetcode.com/problems/truncate-sentence/
+
+class Solution:
+    def truncateSentence(self, s, k):
+        #vastus = s.split(' ')[:k] siin splitime algse stringi eraldi listi elementideks, aga teeme seda kuni knda elemendini
+        #vastus = ' '.join(vastus) siin liidame jällegi kõik listi elemendid üheks stringiks ning lisame iga elemendi vahele tühiku, et tuleks välja lause. algul
+        #return vastus algul tegin kolme reaga, aga ühega oli kiirem
+        return ' '.join(s.split(' ')[:k])
