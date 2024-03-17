@@ -3,5 +3,5 @@ class Solution:
     def sum(self, num1, num2):
         #liidab esimese ja teise arvu omavahel
         sum = num1 + num2
-        #väljastab kahe arvu summa
+        #tagastab kahe arvu summa
         return sum
