@@ -15,4 +15,5 @@ KASUTATUD ÜLESANDED:
 13. Fizz Buzz
 14. Water Bottles
 15. Contains Duplicate
-16.
+16. How many numbers are samller than the current number
+17. 
