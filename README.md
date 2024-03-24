@@ -1,1 +1,1 @@
-tehee
+Siin hoiame oma programmeerimise kodutöid.
