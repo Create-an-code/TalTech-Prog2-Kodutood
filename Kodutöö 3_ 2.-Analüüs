@@ -4,5 +4,5 @@ Valisime ülesandeks, mida analüüsida:https://github.com/kristjan0/Proge2kodun
 Analüüsi autorid on Patrick Välja, Oliver Utsar
 
 Kood on lühike kuid arusaadavalt vormistatud. Samuti on käsud ühes lauses defineeritud. 
-Võrreldes meie 1.ül_7 siis meie kood on palju pikem, mahukam ja raskemini arusaadavam.
-Meie failis on välja toodud kriteeriume, mis meie arvates kindlustaks parema programmi töö
+Võrreldes meie 1.ül_7 siis meie kood on palju pikem, mahukam ja raskemini arusaadavam. Meie koodis on kasutatud mitmeid tsükkleid ning lisakriteeriume, mida otseselt vaja ei ole.
+Lisakriteeriumid, võivad olla, aga ei pea, kuid meie arvates kindlustaks parema programmi töö ning takistaks programmi tõrkumist, kus programm ei leiagi õiget või soovitud vastust.
