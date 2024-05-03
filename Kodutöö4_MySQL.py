@@ -57,8 +57,8 @@ def logi_sisse():
      #võrdleme räsitud paroole
         cursor.execute("SELECT * FROM Tabel WHERE Kasutajanimi = %s AND Parool = %s", (kasutajanimi, parool_rasitud))
         kasutaja = cursor.fetchone()
-
-        if kasutaja:
+        print(kasutajanimi)
+        if kasutajanimi:
             print("Sisselogimine õnnestus!")
         else:
             print("Vale kasutajanimi või parool!")
