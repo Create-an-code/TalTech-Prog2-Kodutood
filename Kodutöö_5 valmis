@@ -1,0 +1,93 @@
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import rsa
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.backends import default_backend
+
+def generate_keys():
+    private_key = rsa.generate_private_key(
+        public_exponent=65537,
+        key_size=2048
+    )
+    public_key = private_key.public_key()
+
+    # Salvesta avalik võti
+    with open("public_key.pem", "wb") as public_key_file:
+        public_key_file.write(
+            public_key.public_bytes(
+                encoding=serialization.Encoding.PEM,
+                format=serialization.PublicFormat.SubjectPublicKeyInfo
+            )
+        )
+
+    # Salvesta privaatne võti
+    with open("private_key.pem", "wb") as private_key_file:
+        private_key_file.write(
+            private_key.private_bytes(
+                encoding=serialization.Encoding.PEM,
+                format=serialization.PrivateFormat.TraditionalOpenSSL,
+                encryption_algorithm=serialization.NoEncryption()
+            )
+        )
+
+def encrypt_text(plaintext, public_key_data):
+    public_key = serialization.load_pem_public_key(public_key_data, backend=default_backend())
+
+    ciphertext = public_key.encrypt(
+        plaintext.encode(),
+        padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA256()),
+            algorithm=hashes.SHA256(),
+            label=None
+        )
+    )
+
+    return ciphertext
+
+def decrypt_text(ciphertext, private_key_data):
+    private_key = serialization.load_pem_private_key(private_key_data, password=None, backend=default_backend())
+
+    plaintext = private_key.decrypt(
+        ciphertext,
+        padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA256()),
+            algorithm=hashes.SHA256(),
+            label=None
+        )
+    )
+
+    return plaintext.decode()
+
+if __name__ == "__main__":
+    choice = input("Choose action:\n1. Generate keys\n2. Encrypt text\n3. Decrypt text\n")
+    
+    if choice == "1":
+        generate_keys()
+        print("Keys generated successfully!")
+    elif choice == "2":
+        plaintext = input("Enter text to encrypt: ")
+        with open("public_key.pem", "rb") as public_key_file:
+            public_key_data = public_key_file.read()
+        
+        encrypted_text = encrypt_text(plaintext, public_key_data)
+
+        with open("encrypted_text.txt", "wb") as encrypted_file:
+            encrypted_file.write(encrypted_text)
+        
+        print("Text encrypted successfully!")
+    elif choice == "3":
+        encrypted_text_path = input("Enter path to encrypted text file: ")
+        private_key_path = input("Enter path to private key file: ")
+        
+        with open("private_key.pem", "rb") as private_key_file:
+            private_key_data = private_key_file.read()
+
+        with open(encrypted_text_path, "rb") as encrypted_file:
+            ciphertext = encrypted_file.read()
+
+        decrypted_text = decrypt_text(ciphertext, private_key_data)
+
+        print("Decrypted text:", decrypted_text)
+    else:
+        print("Invalid choice!")
+
