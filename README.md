@@ -16,3 +16,5 @@ KASUTATUD ÜLESANDED:
 14. Water Bottles
 15. Contains Duplicate
 16. How many numbers are smaller than the current number
+17. Number of good pairs
+18. 
