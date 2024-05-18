@@ -17,4 +17,4 @@ KASUTATUD ÜLESANDED:
 15. Contains Duplicate
 16. How many numbers are smaller than the current number
 17. Number of good pairs
-18. 
+18. Find words containing character
