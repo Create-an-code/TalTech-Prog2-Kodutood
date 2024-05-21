@@ -18,3 +18,5 @@ KASUTATUD ÜLESANDED:
 16. How many numbers are smaller than the current number
 17. Number of good pairs
 18. Find words containing character
+6.3 - Nim Game 
+6.4 - Studnet Attendance Record
