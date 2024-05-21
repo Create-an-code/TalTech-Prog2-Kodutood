@@ -5,3 +5,4 @@ class Solution:
             return True
         else:
             return False
+# https://leetcode.com/problems/nim-game/description/
