@@ -20,4 +20,6 @@ KASUTATUD ÜLESANDED:
 18. Find words containing character
 6.3 - Nim Game
 6.4 Student Attendance Record
+6.5 Jewels and Stones
+6.6 Harshad Number
     
